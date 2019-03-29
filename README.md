@@ -1,8 +1,9 @@
-## Chess built using React
+# Chess game built with React
 
-# To-do's:
-1. Get the functionality of pieces up and running (ie. Pawn, King, Queen, etc.)
+### To-do's:
+1. Render the board; place pieces in their starting positions
+2. Get the functionality of pieces up and running (ie. Pawn, King, Queen, etc.)
     a. For each piece, they have specific moves 
-2. Modularize React classes 
-3. Reduce any unnecessary sections
+3. Modularize React classes 
+
 
