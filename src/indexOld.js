@@ -22,9 +22,10 @@ List.defaultProps = {
 function Square(props) {
     return (
         <button
-            className="square"
+            className={"square " + props.shade}
+            onClick={props.onClick}
+            style={props.style}
         >
-            {props.key}
         </button>
     );
 }
