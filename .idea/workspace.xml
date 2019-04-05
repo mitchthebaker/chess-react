@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9080da90-cf41-4fa3-a979-9d27f861ef35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/board.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pieces/game-pieces/pawn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pieces/game-pieces/pawn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pieces/game-pieces/rook.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pieces/game-pieces/rook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,6 +134,11 @@
             <path>
               <item name="chess-react" type="b2602c69:ProjectViewProjectNode" />
               <item name="chess-react" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chess-react" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chess-react" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -239,12 +239,12 @@
       <workItem from="1554244131801" duration="228000" />
       <workItem from="1554245308152" duration="4216000" />
       <workItem from="1554273277050" duration="2391000" />
-      <workItem from="1554469321908" duration="3893000" />
+      <workItem from="1554469321908" duration="4402000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74448000" />
+    <option name="totallyTimeSpent" value="74957000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="781" y="25" width="1139" height="1055" extended-state="4" />
@@ -451,6 +451,9 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/chess-react.iml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pieces/game-pieces/pawn.js">
       <provider selected="true" editor-type-id="text-editor">
