@@ -3,6 +3,12 @@
 # dependencies
 /node_modules
 /.pnp
+/.idea/chess-react.iml
+/.idea/encodings.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
 /.idea
 /package-lock.json
 .pnp.js
