@@ -6,7 +6,6 @@ import Square from './square.js';
 export default class Board extends React.Component {
 
     renderSquare(i, squareShade) {
-        console.log(this.props.squares[i]);
         return (
           <Square
             piece={this.props.squares[i]}

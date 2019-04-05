@@ -16,6 +16,38 @@ export default class Game extends React.Component {
     }
 
     handleClick(i) {
+        const squares = this.state.squares.slice();
+
+        if(this.state.sourceSelection === -1) {
+            if(!squares[i] || squares[i].player !== this.state.player) {
+                this.setState({
+                   status: 'Wrong selection; choose player ' + this.state.player + ' pieces.'
+                });
+                //squares[i] ? delete squares[i].style.backgroundColor : null;
+            }
+            else {
+                squares[i].style = { ...squares[i].style, backgroundColor: "RGB(111, 143, 114)"};
+                this.setState({
+                   status: "Choose the destination for the selected piece",
+                   sourceSelection: i
+                });
+            }
+        }
+        else if(this.state.sourceSelection > -1) {
+            //delete squares[this.state.sourceSelection].style.backgroundColor;
+            if(squares[i] && squares[i].player === this.state.player) {
+                this.setState({
+                    status: "Wrong selection. Choose a valid source and destination",
+                    sourceSelection: -1
+                })
+            }
+            else {
+                const squares = this.state.squares.slice();
+                const isDestEnemyOccupied = squares[i]? true : false;
+                const isMovePossible = squares[this.state.sourceSelection].isMovePossible(this.state.sourceSelection, i, isDestEnemyOccupied);
+
+            }
+        }
 
     }
 
