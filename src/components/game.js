@@ -1,13 +1,16 @@
 import React from 'react';
 import '../index.css';
 import Board from './board.js';
-import createChessBoard from "../helpers/createChessBoard";
+import FallenPiecesBlock from './fallenPiecesBlock.js';
+import createChessBoard from "../helpers/createChessBoard.js";
 
 export default class Game extends React.Component {
     constructor() {
         super();
         this.state = {
             squares: createChessBoard(),
+            whiteFallenPieces: [],
+            blackFallenPieces: [],
             player: 1,
             sourceSelection: -1,
             status: '',
@@ -43,12 +46,58 @@ export default class Game extends React.Component {
             }
             else {
                 const squares = this.state.squares.slice();
-                const isDestEnemyOccupied = squares[i]? true : false;
+                const whiteFallenPieces = this.state.whiteFallenPieces.slice();
+                const blackFallenPieces = this.state.blackFallenPieces.slice();
+                const isDestEnemyOccupied = !!squares[i]; //squares[i]? true : false
                 const isMovePossible = squares[this.state.sourceSelection].isMovePossible(this.state.sourceSelection, i, isDestEnemyOccupied);
+                const srcToDestPath = squares[this.state.sourceSelection].getSrctoDestPath(this.state.sourceSelection, i);
+                const isMoveLegal = this.isMoveLegal(srcToDestPath);
 
+                if(isMovePossible && isMoveLegal) {
+                    if(squares[i] !== null) {
+                        if(squares[i].player === 1) {
+                            whiteFallenPieces.push(squares[i]);
+                        }
+                        else {
+                            blackFallenPieces.push(squares[i]);
+                        }
+                    }
+
+                    console.log("whiteFallenPieces", whiteFallenPieces);
+                    console.log("blackFallenPieces", blackFallenPieces);
+                    squares[i] = squares[this.state.sourceSelection];
+                    squares[this.state.sourceSelection] = null;
+
+                    let player = this.state.player === 1? 2 : 1;
+                    let turn = this.state.turn === 'white'? 'black' : 'white';
+                    this.setState({
+                        sourceSelection: -1,
+                        squares: squares,
+                        whiteFallenPieces: whiteFallenPieces,
+                        blackFallenPieces: blackFallenPieces,
+                        player: player,
+                        status: '',
+                        turn: turn
+                    });
+                }
+                else {
+                    this.setState({
+                        status: "Wrong selection, choose a valid source and destination.",
+                        sourceSelection: -1
+                    });
+                }
             }
         }
+    }
 
+    isMoveLegal(srcToDestPath) {
+        let isLegal = true;
+        for(let i = 0; i < srcToDestPath.length; i++) {
+            if(this.state.squares[srcToDestPath[i]] !== null) {
+                isLegal = false;
+            }
+        }
+        return isLegal;
     }
 
     render() {
@@ -63,6 +112,12 @@ export default class Game extends React.Component {
                     </div>
                     <div className="game-status">
                         {this.state.status}
+                    </div>
+                    <div className="fallen-pieces-block">
+                        {<FallenPiecesBlock
+                            whiteFallenPieces={this.state.whiteFallenPieces}
+                            blackFallenPieces={this.state.blackFallenPieces}
+                        />}
                     </div>
                 </div>
             </div>
