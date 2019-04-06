@@ -1,5 +1,5 @@
 import React from 'react';
-import '../index.css';
+import '../index.scss';
 import Board from './board.js';
 import FallenPiecesBlock from './fallenPiecesBlock.js';
 import createChessBoard from "../helpers/createChessBoard.js";
